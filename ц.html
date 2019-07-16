@@ -27,20 +27,20 @@
             <tr>
                 <td><input class="button" type="button"value="("onclick="a('(')"></td>
                 <td><input class="button" type="button"value=")"onclick="a(')')"></td>
-                <td><input class="button" type="button"value="%"onclick="a('%')"></td>
+                <td><input class="button" type="button"value="<"onclick="d()"></td>
                 <td><input class="button" type="button"value="CE"onclick="c()"></td>
             </tr>
             <tr>
                 <td><input class="button" type="button"value="7"onclick="a(7)"></td>
                 <td><input class="button" type="button"value="8"onclick="a(8)"></td>
                 <td><input class="button" type="button"value="9"onclick="a(9)"></td>
-                <td><input class="button" type="button"value=":"onclick="a('/')"></td>
+                <td><input class="button" type="button"value="/"onclick="a('/')"></td>
             </tr>
             <tr>
                 <td><input class="button" type="button"value="4"onclick="a(4)"></td>
                 <td><input class="button" type="button"value="5"onclick="a(5)"></td>
                 <td><input class="button" type="button"value="6"onclick="a(6)"></td>
-                <td><input class="button" type="button"value="X"onclick="a('*')"></td>
+                <td><input class="button" type="button"value="*"onclick="a('*')"></td>
             </tr>
             <tr>
                 <td><input class="button" type="button"value="1"onclick="a(1)"></td>
@@ -59,18 +59,32 @@
 </div>
 </body>
 <script>
+
     function c() {
         document.form.textview.value = "";
     }
+
     function a(num) {
-        document.form.textview.value = document.form.textview.value+num
-        if (document.form.textview.value==='.') {
-            length>0
+        if (num === '.') {
+            if (document.form.textview.value.length > 0 && !document.form.textview.value.includes('.')) {
+                document.form.textview.value = document.form.textview.value + num
+            }
         }
-        }
+        if (num === '+') {
+                if (document.form.textview.value.length > 0) {
+                    document.form.textview.value = document.form.textview.value + num
+                }
+            } else {
+                document.form.textview.value = document.form.textview.value + num
+            }
+    }
+    function d() {
+        document.form.textview.value = document.form.textview.value.substr(0,document.form.textview.value.length-1)
+    }
+
     function b() {
         var s = document.form.textview.value;
-        if (s){
+        if (s) {
             document.form.textview.value = eval(s)
         }
     }
