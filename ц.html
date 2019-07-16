@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calc</title>
+</head>
+<body>
+<style>
+.button{
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        margin: 2px;
+        cursor: pointer;
+    }
+.textview{
+       width: 210px;
+        margin: 5px;
+        font-size: 25px;
+        padding: 5px;
+    }
+</style>
+<div class="a">
+    <form name="form">
+        <input class="textview" name="textview">
+        <table>
+            <tr>
+                <td><input class="button" type="button"value="("onclick="a('(')"></td>
+                <td><input class="button" type="button"value=")"onclick="a(')')"></td>
+                <td><input class="button" type="button"value="%"onclick="a('%')"></td>
+                <td><input class="button" type="button"value="CE"onclick="c()"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button"value="7"onclick="a(7)"></td>
+                <td><input class="button" type="button"value="8"onclick="a(8)"></td>
+                <td><input class="button" type="button"value="9"onclick="a(9)"></td>
+                <td><input class="button" type="button"value=":"onclick="a('/')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button"value="4"onclick="a(4)"></td>
+                <td><input class="button" type="button"value="5"onclick="a(5)"></td>
+                <td><input class="button" type="button"value="6"onclick="a(6)"></td>
+                <td><input class="button" type="button"value="X"onclick="a('*')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button"value="1"onclick="a(1)"></td>
+                <td><input class="button" type="button"value="2"onclick="a(2)"></td>
+                <td><input class="button" type="button"value="3"onclick="a(3)"></td>
+                <td><input class="button" type="button"value="-"onclick="a('-')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button"value="0"onclick="a('0')"></td>
+                <td><input class="button" type="button"value="."onclick="a('.')"></td>
+                <td><input class="button" type="button"value="="onclick="b()"></td>
+                <td><input class="button" type="button"value="+"onclick="a('+')"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+<script>
+    function c() {
+        document.form.textview.value = "";
+    }
+    function a(num) {
+        document.form.textview.value = document.form.textview.value+num
+        if (document.form.textview.value==='.') {
+            length>0
+        }
+        }
+    function b() {
+        var s = document.form.textview.value;
+        if (s){
+            document.form.textview.value = eval(s)
+        }
+    }
+</script>
+</html>
